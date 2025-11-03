@@ -1,12 +1,26 @@
-GET https://flower-store-reboot-4abaf6016485.herokuapp.com/api/flowers
-
 ###
-POST https://flower-store-reboot-4abaf6016485.herokuapp.com/api/flowers
+### === ТЕСТУВАННЯ AppUser (на Heroku) ===
+###
+
+# 1. Створи нового користувача
+POST https://flower-store-reboot-4abaf6016485.herokuapp.com/api/users
 Content-Type: application/json
 
 {
-  "sepalLength": 100.0,
-  "color": "BLUE",
-  "price": 100.0,
-  "flowerType": "TULIP"
+    "email": "live.user@heroku.com",
+    "dob": "1999-12-01"
+}
+
+###
+# 2. Перевір, чи з'явився користувач
+GET https://flower-store-reboot-4abaf6016485.herokuapp.com/api/users
+
+###
+# 3. Перевір унікальність (має повернути 409 Conflict)
+POST https://flower-store-reboot-4abaf6016485.herokuapp.com/api/users
+Content-Type: application/json
+
+{
+    "email": "live.user@heroku.com",
+    "dob": "1999-12-01"
 }
