@@ -1,7 +1,7 @@
-GET http://localhost:8080/api/flowers
+GET https://flower-store-reboot-4abaf6016485.herokuapp.com/api/flowers
 
 ###
-POST http://localhost:8080/api/flowers
+POST https://flower-store-reboot-4abaf6016485.herokuapp.com/api/flowers
 Content-Type: application/json
 
 {
